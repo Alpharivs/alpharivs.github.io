@@ -1,5 +1,5 @@
 baseURL: https://alpharivs.github.io
-title: Lux Sit
+title: Lux-Sit
 
 # Uncomment when not installing with Hugo Modules
 # theme: eureka
@@ -9,7 +9,7 @@ title: Lux Sit
 
 paginate: 3
 copyright: >
-  &copy; 2021 <a href="https://twitter.com/alpharivs">Alpharivs</a>
+  &copy; 2022 <a href="https://twitter.com/alpharivs">Alpharivs</a>
 enableEmoji: true
 enableGitInfo: false
 summaryLength: 75

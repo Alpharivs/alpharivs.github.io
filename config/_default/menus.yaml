@@ -1,7 +1,13 @@
 main:
-  - name: Posts
-    url: /posts/
-    weight: 2
-  - name: Docs
-    url: /docs/
-    weight: 3
+  - name: Malware Analysis
+    url: /malware/
+    weight: 1
+#  - name: CTF Write-ups
+#    url: /writeups/
+#    weight: 2
+#  - name: Cheat Sheets
+#    url: /cheatsheets/
+#    weight: 3
+  - name: Hack the Box
+    url: https://app.hackthebox.com/users/525385
+    weight: 4
