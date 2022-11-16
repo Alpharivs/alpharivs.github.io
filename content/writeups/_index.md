@@ -1,4 +1,4 @@
 ---
-title: Docs
+title: Posts
 layout: doc-list
 ---

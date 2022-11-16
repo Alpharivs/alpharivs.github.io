@@ -2,12 +2,12 @@ main:
   - name: Malware Analysis
     url: /malware/
     weight: 1
-#  - name: CTF Write-ups
-#    url: /writeups/
-#    weight: 2
+  - name: CTF Write-ups
+    url: /writeups/
+    weight: 2
 #  - name: Cheat Sheets
 #    url: /cheatsheets/
 #    weight: 3
-  - name: Hack the Box
+  - name: HacktheBox Profile
     url: https://app.hackthebox.com/users/525385
     weight: 4

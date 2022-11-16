@@ -40,6 +40,7 @@ highlight:
       - javascript
       - ruby
       - php
+      - shell
     # See https://github.com/highlightjs/cdn-release/tree/main/build/styles for available styles.
     style: base16/solarized-light
 
