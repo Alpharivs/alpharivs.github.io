@@ -1,6 +1,6 @@
 ---
 title: Flare-On 2022 - Pixel Poker
-description: Writeup for Pixel Poker Flare-on 2022 challenge
+description: Write-up for Pixel Poker Flare-on 2022 challenge
 toc: true
 authors: Alpharivs
 tags:
@@ -11,7 +11,7 @@ tags:
   - challenge
   - ctf
   - flare-on
-categories: writeups
+categories: write-ups
 date: '2022-11-16'
 draft: false
 ---
@@ -36,13 +36,13 @@ When we run the file we are presented with the following GUI.
 
 ![main](images/main.png)
 
-Playing around we it seems that we must click the correct coordinate to win the challenge but we have only a limited amount of tries, the program tells us which coordinate we have clicked and how many tries left we have.
+Playing around it seems that the goal is clicking the right pixel but we have only a limited amount of tries, the program tells us which coordinate we have clicked and how many tries left we have.
 ![coordinates](images/coordinates.png)
 
 Upon failing we are presented with the following message box and after clicking "OK" the program closes.
 ![failure](images/failure.png)
 
-That gives us some information on where to start looking for a solution.
+That gives us enough information on where to start looking for a solution.
 
 ## Reverse Engineering
 
