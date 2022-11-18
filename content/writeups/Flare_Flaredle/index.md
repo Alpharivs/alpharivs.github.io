@@ -83,7 +83,7 @@ if (guessString === rightGuessString) {
 
 ## Debugging
 
-To quickly solve this challenge we can just set a breakpoint in the comparison and examine the contents of the variable "rightGuessString" at runtime.
+To quickly solve this challenge we can just set a breakpoint in the comparison, input a random word from the list and examine the contents of the variable "rightGuessString" at runtime.
 ![breakpoint](images/breakpoint.png)
 
 Now that we know which word is the right answer we could run again the game and use the word to get the flag or we can be lazy and just use the console to change the value of the "guessString" variable as shown below.

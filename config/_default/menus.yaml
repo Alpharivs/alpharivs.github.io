@@ -8,6 +8,6 @@ main:
 #  - name: Cheat Sheets
 #    url: /cheatsheets/
 #    weight: 3
-  - name: HacktheBox Profile
-    url: https://app.hackthebox.com/users/525385
+  - name: HacktheBox Write-ups
+    url: /htb_writeups/
     weight: 4
