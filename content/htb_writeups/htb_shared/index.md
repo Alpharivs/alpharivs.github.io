@@ -1,6 +1,6 @@
 ---
 title: HTB - Shared
-description: Write-up for the Hack The Box Machine "Shared"
+description: Write-up for the machine "Shared"
 toc: true
 authors: Alpharivs
 tags:
