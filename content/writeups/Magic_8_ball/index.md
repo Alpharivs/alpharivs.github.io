@@ -5,7 +5,6 @@ toc: true
 authors: Alpharivs
 tags:
   - reversing
-  - web
   - SDL
   - static
   - dynamic
@@ -23,6 +22,18 @@ draft: false
 You got a question? Ask the 8 ball!
 ```
 ## Challenge Overview
+
+```bash
++------------------------+------------------------------------------------------------------------------------+
+| md5                    | 3c2d4ea7b946596096bf039d0043a07b                                                   |
+| sha1                   | ae41beb01a7caa07a5b6e847a7c04016539cba64                                           |
+| sha256                 | 2fcead898d8f900715c9201f246d040eb9686b8f732e683518e8ef92d26dfa89                   |
+| os                     | windows                                                                            |
+| format                 | pe                                                                                 |
+| arch                   | i386                                                                               |
+| path                   | Magic8Ball.exe                                                                     |
++------------------------+------------------------------------------------------------------------------------+
+```
 
 We are given a Windows x32 exe and a bunch of DLLs and an assets directory.
 
@@ -54,7 +65,7 @@ Then the ball answers us!
 
 There seem to be multiple strings used to display answers, that gives us a starting point for reversing how the executable works.
 
-## RE
+## Advances Static Analysis
 
 We begin by searching for references to the strings used for the answers.
 
