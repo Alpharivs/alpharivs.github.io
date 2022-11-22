@@ -14,6 +14,7 @@ tags:
 categories: writeups
 date: '2022-11-08'
 draft: false
+featuredImage: /images/htb_writeups/Shared.png
 ---
 
 ![shared](images/Shared.png)

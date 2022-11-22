@@ -15,6 +15,7 @@ tags:
 categories: write-ups
 date: '2022-11-17'
 draft: false
+featuredImage: /images/writeups/flare.png
 ---
 
 ## Challenge Description
