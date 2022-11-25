@@ -29,7 +29,7 @@ Play it live at: http://flare-on.com/flaredle/
 Upon loading the website we are presented with some sort of Wordle game.
 ![main](images/main.png)
 
-## Analysis of the Webapp.
+## Dynamic Analysis
 
 When testing the app it seems that it only accepts words with a minimum length.
 ![not_enough](images/not_enough.png)
@@ -39,7 +39,7 @@ After some testing we can see that the length required is 21 characters, upon re
 
 So we know that it checks a list of valid 21 character words.
 
-## Source Inspection.
+## Static Analysis
 
 ### words.js
 Opening the Firefox devtools (Chrome's work too) and checking the Debugger tab we see that 2 javascript files are being loaded, script.js and words.js
@@ -82,7 +82,7 @@ if (guessString === rightGuessString) {
 ...(SNIP)...
 ```
 
-## Debugging
+## Advanced Dynamic Analysis
 
 To quickly solve this challenge we can just set a breakpoint in the comparison, input a random word from the list and examine the contents of the variable "rightGuessString" at runtime.
 ![breakpoint](images/breakpoint.png)

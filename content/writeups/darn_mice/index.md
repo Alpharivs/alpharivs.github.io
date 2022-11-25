@@ -21,7 +21,7 @@ featuredImage: /images/writeups/flare.png
 “If it crashes its user error.” 
 -Flare Team
 ```
-## Challenge Overview
+## Basic Static Analysis
 
 We are given a Windows PE32 executable.
 ```bash

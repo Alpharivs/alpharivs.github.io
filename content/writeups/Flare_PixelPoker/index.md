@@ -23,7 +23,7 @@ featuredImage: /images/writeups/flare.png
 I said you wouldn’t win that last one. I lied. The last challenge was basically a captcha. Now the real work begins. Shall we play another game?
 ```
 
-## Challenge Overview
+## Basic Static Analysis
 
 A basic check shows us that we have a 32 bit Windows exe file.
 ```bash
@@ -31,7 +31,8 @@ remnux@remnux:~/flare/pixelPoker$ file PixelPoker.exe
 PixelPoker.exe: PE32 executable (GUI) Intel 80386, for MS Windows
 ```
 so let's switch to a Windows VM.
-## Analysis of the Binary.
+
+## Basic Dynamic Analysis
 
 When we run the file we are presented with the following GUI.
 
@@ -45,7 +46,7 @@ Upon failing we are presented with the following message box and after clicking 
 
 That gives us enough information on where to start looking for a solution.
 
-## Reverse Engineering
+## Advanced Static Analysis
 
 We know that when we fail a message is presented to us by searching fot the strings in the program we can check it's references and find the function in which it is being used.
 ![string_ref](images/string_ref.png)
@@ -60,13 +61,16 @@ We can see in the image below that a comparison against 10 is being made, if it'
 
 That makes sense taking into consideration that we are checking 2 coordinate values.
 
-## Debugging
+## Advanced Dynamic Analysis
 
 The most straight forward solution for this challenge (albeit not the only one nor the most refined) is to set breakpoints as shown below in the comparison instructions that we have previously identified.
 ![breakpoints](images/breakpoints.png)
 
 Next we run the program and when we click anywhere we hit immediately the first breakpoint where we can see that the registers EDI and EDX are being compared, we have the coordinates 143,22 and the values on EDI and EBX are 143 and 95 respectively, that means that our value is stored in EDI and the correct value (95) is stored in EDX.
 ![first_comp](images/first_comp.png)
+
+## Flag
+
 With that knowledge it's just as easy as changing the value of EDI to match EBX.
 
 ![register_edit](images/register_edit.png)

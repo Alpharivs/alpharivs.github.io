@@ -22,7 +22,7 @@ featuredImage: /images/writeups/flare.png
 ```text
 You got a question? Ask the 8 ball!
 ```
-## Challenge Overview
+## Basic Static Analysis
 
 ```bash
 +------------------------+------------------------------------------------------------------------------------+
@@ -52,7 +52,7 @@ zlib1.dll:       PE32 executable (DLL) (console) Intel 80386 (stripped to extern
 assets:          directory
 ```
 
-## Playing Around
+## Basic Dynamic Analysis
 
 When executing the "Magic8Ball.exe" executable in a Windows VM we see this GUI.
 
@@ -66,7 +66,7 @@ Then the ball answers us!
 
 There seem to be multiple strings used to display answers, that gives us a starting point for reversing how the executable works.
 
-## Advances Static Analysis
+## Advanced Static Analysis
 
 We begin by searching for references to the strings used for the answers.
 
@@ -193,7 +193,7 @@ There's also a a call to strncmp which probably checks if the question that we i
 
 To quickly test this we can open the executable in x32dbg and quickly test it.
 
-## Debugging
+## Advanced Dynamic Analysis
 
 After rebasing the executable in Ida in order to set the breakpoint in the debugger, running the program, inputting the directions up x2, down x2, right x2 and  left x2 and entering the string ***'hello'*** as question we hit the breakpoint.
 

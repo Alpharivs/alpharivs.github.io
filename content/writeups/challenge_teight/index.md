@@ -41,7 +41,7 @@ And a .pcap file.
 ```bash
 traffic.pcapng: pcapng capture file - version 1.0
 ```
-## Basic Analysis.
+## Basic Static Analysis
 
 ### Functionality
 We can use capa to get a quick overview of the executable's capabilities.
@@ -120,7 +120,7 @@ The pcap file contains two HTTP Post Requests with their respective responses wh
 
 Decoding the b64 strings doesn't yield any useful data.
 
-## Behavior
+## Basic Dynamic Analysis
 
 When running the executable in our Windows VM there are no suspicious run-time activities, there's no network traffic produced nor procmon detected anything out of the ordinary.
 
@@ -136,7 +136,7 @@ The result of function ***C346CA*** (Note: the address may vary in your machine)
 We could try to reverse function ***C346CA*** and see how we can make the comparison to be equal but another option (really lazy but efficient) is to just to patch the instruction to be jump if not ***0xF***.
 ![patch](images/patch.png)
 
-## Network Traffic Analysis
+### Network Traffic
 
 Now after setting up our network with ***inetsim*** , ***fakedns*** and ***Wireshark*** we can see network activity.
 
