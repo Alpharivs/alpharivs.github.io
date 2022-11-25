@@ -17,9 +17,6 @@ draft: false
 featuredImage: /images/htb_writeups/Shared.png
 ---
 
-![shared](images/Shared.png)
-
-
 ## Enumeration
 
 ### Host Discovery
