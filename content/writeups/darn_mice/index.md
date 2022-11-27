@@ -112,7 +112,7 @@ No, nevermind.
 ## Advanced Static Analysis
 We will start by examining the main function of the executable.
 
-It starts by moving values to a ***35*** byte array (not fully shown in the image below) that we will rename as ***byte_array***.
+It starts by moving values to a **35** byte array (not fully shown in the image below) that we will rename as **byte_array**.
 
 ![byte_array](images/byte_array.png)
 
@@ -140,7 +140,7 @@ The main function of the loop with variables renamed is shown in the image below
 | --- | --- |
 |PAGE_EXECUTE_READWRITE 0x40 | Enables execute, read-only, or read/write access to the committed region of pages. |
 
-- Analyzing the contents of the registers we can see that the executable stores into the ***buffer*** that it just created the current byte (corresponding to the round of the iteration) of the command line argument that we have passed ***+*** the value of the byte_buffer that it initialized at the beginning of main.
+- Analyzing the contents of the registers we can see that the executable stores into the **buffer** that it just created the current byte (corresponding to the round of the iteration) of the command line argument that we have passed **+** the value of the byte_buffer that it initialized at the beginning of main.
 
 ```bash
 buffer[0] = byte_array[i] + argv[i]
@@ -152,7 +152,7 @@ buffer[0] = byte_array[i] + argv[i]
 
 We now know why the program stopped and nothing more happened even if our input was 35 or less characters long.
 
-When calling the buffer it creates an access violation due to ***invalid instruction*** as the buffer contains the byte (from our example "lol") 0x6c + the value 0x50 from the byte_array.
+When calling the buffer it creates an access violation due to **invalid instruction** as the buffer contains the byte (from our example "lol") 0x6c + the value 0x50 from the byte_array.
 ```bash
 argv = "lol"
 

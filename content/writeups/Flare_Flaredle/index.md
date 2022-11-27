@@ -42,9 +42,9 @@ So we know that it checks a list of valid 21 character words.
 ## Static Analysis
 
 ### words.js
-Opening the Firefox devtools (Chrome's work too) and checking the Debugger tab we see that 2 javascript files are being loaded, script.js and words.js
+Opening the Firefox devtools (Chrome's work too) and checking the Debugger tab we see that 2 javascript files are being loaded, **script.js** and **words.js**
 
-words.js contains a list of valid words.
+**words.js** contains a list of valid words.
 ![word_list](images/word_list.png)
 
 When trying a random word from the list the app now marks which letters are correct, which ones are present and which ones are not present in the correct answer.
@@ -54,7 +54,7 @@ Armed with that knowledge we can deduce that somewhere in the source code there'
 
 ### script.js
 
-Examining script.js we find this interesting conditional statement in the code.
+Examining **script.js** we find this interesting conditional statement in the code.
 ```javascript
 ...(SNIP)...
 
@@ -65,7 +65,7 @@ if (pressedKey === 'Enter') {
 
 ...(SNIP)...
 ```
-Examining the function "checkGuess" we see that theres indeed a comparison being made between the variables "guessString" and  "rightGuessString"
+Examining the function "**checkGuess**" we see that theres indeed a comparison being made between the variables "**guessString**" and  "**rightGuessString**"
 ```javascript
 ...(SNIP)...
 
@@ -84,7 +84,7 @@ if (guessString === rightGuessString) {
 
 ## Advanced Dynamic Analysis
 
-To quickly solve this challenge we can just set a breakpoint in the comparison, input a random word from the list and examine the contents of the variable "rightGuessString" at runtime.
+To quickly solve this challenge we can just set a breakpoint in the comparison, input a random word from the list and examine the contents of the variable "**rightGuessString**" at runtime.
 ![breakpoint](images/breakpoint.png)
 
 Now that we know which word is the right answer we could run again the game and use the word to get the flag or we can be lazy and just use the console to change the value of the "guessString" variable as shown below.

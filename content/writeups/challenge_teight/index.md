@@ -131,14 +131,14 @@ We know that it produces traffic so there's something going on, the quickest way
 When running the program with a debugger the program makes a call to the "sleep" function and then just ... sleeps... for 12 hours...
 ![sleep](images/sleep.png)
 
-The result of function ***C346CA*** (Note: the address may vary in your machine) is compared to ***0xF*** since in out case it's not we don't take the jump and proceed to call the ***sleep*** function.
+The result of function **C346CA** (Note: the address may vary in your machine) is compared to **0xF** since in out case it's not we don't take the jump and proceed to call the **sleep** function.
 
-We could try to reverse function ***C346CA*** and see how we can make the comparison to be equal but another option (really lazy but efficient) is to just to patch the instruction to be jump if not ***0xF***.
+We could try to reverse function **C346CA** and see how we can make the comparison to be equal but another option (really lazy but efficient) is to just to patch the instruction to be jump if not **0xF**.
 ![patch](images/patch.png)
 
 ### Network Traffic
 
-Now after setting up our network with ***inetsim*** , ***fakedns*** and ***Wireshark*** we can see network activity.
+Now after setting up our network with **inetsim** , **fakedns** and **Wireshark** we can see network activity.
 
 ```bash
 remnux@remnux:~$ fakedns
@@ -191,7 +191,7 @@ Now that we know the location of each important function we can analyze them wit
 
 ## Advanced Dynamic Analysis
 
-We will begin by setting breakpoints in the addresses that ***capa*** gave us and analyzing the functions responsible for the base64, MD5 and RC4 encryption using x32dbg, fakeDNS and inetsim.
+We will begin by setting breakpoints in the addresses that **capa** gave us and analyzing the functions responsible for the base64, MD5 and RC4 encryption using x32dbg, fakeDNS and inetsim.
 
 ### Base64
 
@@ -217,7 +217,7 @@ The hash is the MD5 hash of the string passed as argument.
 echo -n "FO918985" | iconv -f ascii -t utf-16le | md5sum
 07963e27afe4d167f408122519ac19c2
 ```
-After testing multiple times we can observe that the value being hashed is composed of ***FO9*** concatenated with a random number.
+After testing multiple times we can observe that the value being hashed is composed of **FO9** concatenated with a random number.
 
 ### RC4
 
@@ -230,7 +230,7 @@ This is probably used as passphrase.
 
 #### PRGA
 
-We can identify the string ***ahoy*** as an argument.
+We can identify the string **ahoy** as an argument.
 ![rc4_prga](images/rc4_prga.png)
 
 #### Testing Decryption
@@ -297,14 +297,14 @@ app.run(host='', port=80, threaded=True)
 
 ### Decrypting the Response
 
-We will set breakpoints in the ***RC4 KSA*** and ***RC4 PRGA*** functions taking notice that data from our server is not received until the ***second*** hit to the ***RC4 KSA*** breakpoint.
+We will set breakpoints in the **RC4 KSA** and **RC4 PRGA** functions taking notice that data from our server is not received until the **second** hit to the **RC4 KSA** breakpoint.
 
 Then we do the following:
 
 - 1 - Hit the RC4 KSA breakpoint (the second time).
 - 2 - Follow in dump the argument containing the hash.
 - 3 - Select the hash in the dump window, right click > binary > edit.
-- 4 - Edit the key to be the one that we reconstructed from the .pcap POST (***a5c6993299429aa7b900211d4a279848***)
+- 4 - Edit the key to be the one that we reconstructed from the .pcap POST (**a5c6993299429aa7b900211d4a279848**)
 ![key_mod](images/key_mod.png)
 
 Then when the program hits the RC4 PRGA breakpoint we can dump the second argument.
@@ -333,17 +333,17 @@ After analyzing the main function we can trace how it's calling the vftable func
 
 ![flow1](images/flow1.png)
 
-Those vftable calls point at function 403860 (***RC4***) and 403D70 (***HTTP***) respectively that checks out with the behavior that we know, the next vftable function to be called is the following:
+Those vftable calls point at function 403860 (**RC4**) and 403D70 (**HTTP**) respectively that checks out with the behavior that we know, the next vftable function to be called is the following:
 
 ![flow2](images/flow2.png)
 
-Offset 8 of the vftable is points to the function 404200 contains calls to ***_wcstok_s*** so it's doing some string manipulation, we can just set a breakpoint at it's return instruction and see what value it yields.
+Offset 8 of the vftable is points to the function 404200 contains calls to **_wcstok_s** so it's doing some string manipulation, we can just set a breakpoint at it's return instruction and see what value it yields.
 
 ![200_ret](images/200_ret.png)
 
 ### Full Flag
 
-If we continue debugging we eventually go back to the main function where the string is concatenated with ***@flare-on.com***.
+If we continue debugging we eventually go back to the main function where the string is concatenated with **@flare-on.com**.
 
 ![final_form](images/final_form.png)
 

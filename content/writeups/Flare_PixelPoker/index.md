@@ -41,7 +41,7 @@ When we run the file we are presented with the following GUI.
 Playing around it seems that the goal is clicking the right pixel but we have only a limited amount of tries, the program tells us which coordinate we have clicked and how many tries left we have.
 ![coordinates](images/coordinates.png)
 
-Upon failing we are presented with the following message box and after clicking "OK" the program closes.
+Upon failing we are presented with the following message box and after clicking "**OK**" the program closes.
 ![failure](images/failure.png)
 
 That gives us enough information on where to start looking for a solution.
@@ -55,7 +55,7 @@ Next we can trace what triggers the creation of that message, we know that it ha
 
 ![trace_failure](images/trace_failure.png)
 
-We can see in the image below that a comparison against 10 is being made, if it's equal (comp 10 10) it jumps to the creation of the failure message, if it's not 10 it jumps to another code block that makes a comparison, if that comparison passes it jumps to a block with yet another comparison.
+We can see in the image below that a comparison against **10** is being made, if it's equal (comp 10 10) it jumps to the creation of the failure message, if it's **not** 10 it jumps to another code block that makes a comparison, if that comparison passes it jumps to a block with yet another comparison.
 
 ![checks](images/checks.png)
 
@@ -66,16 +66,16 @@ That makes sense taking into consideration that we are checking 2 coordinate val
 The most straight forward solution for this challenge (albeit not the only one nor the most refined) is to set breakpoints as shown below in the comparison instructions that we have previously identified.
 ![breakpoints](images/breakpoints.png)
 
-Next we run the program and when we click anywhere we hit immediately the first breakpoint where we can see that the registers EDI and EDX are being compared, we have the coordinates 143,22 and the values on EDI and EBX are 143 and 95 respectively, that means that our value is stored in EDI and the correct value (95) is stored in EDX.
+Next we run the program and when we click anywhere we hit immediately the first breakpoint where we can see that the registers **EDI** and **EDX** are being compared, we have the coordinates **143,22** and the values on **EDI** and **EBX** are **143** and **95** respectively, that means that our value is stored in **EDI** and the correct value (**95**) is stored in **EDX**.
 ![first_comp](images/first_comp.png)
 
 ## Flag
 
-With that knowledge it's just as easy as changing the value of EDI to match EBX.
+With that knowledge it's just as easy as changing the value of **EDI** to match **EBX**.
 
 ![register_edit](images/register_edit.png)
 
-Then we continue the execution and it immediately hits the next breakpoint, this time it compares the registers EBX and EDX but we can do exactly the same that we did before and edit the value of EBX
+Then we continue the execution and it immediately hits the next breakpoint, this time it compares the registers **EBX** and **EDX** but we can do exactly the same that we did before and edit the value of **EBX**
 
 ![second_comp](images/second_comp.png)
 

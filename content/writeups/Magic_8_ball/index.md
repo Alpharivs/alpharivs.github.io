@@ -162,11 +162,11 @@ We can assume that that is the question that we must ask to get the flag but whe
 
 #### SDL_PollEvent
 
-Using the same method we can find the function that calls ***SDL_PollEvent*** labeled as ***"sub_401E50"***.
+Using the same method we can find the function that calls **SDL_PollEvent** labeled as **"sub_401E50"**.
 
-This function sets some flags according to the user input that it receives so we can rename it as ***"keyboard"***, if we examine how the data that this function sets is used maybe we can get the answers that we are seeking.
+This function sets some flags according to the user input that it receives so we can rename it as **"keyboard"**, if we examine how the data that this function sets is used maybe we can get the answers that we are seeking.
 
-Following that line of thought the function that we should inspect is ***"sub_4924E0"***.
+Following that line of thought the function that we should inspect is **"sub_4924E0"**.
 ![keyboard_use](images/keyboard_use.png)
 
 One thing to notice on the image above is that data is being copied into ecx can be traced to the string:
@@ -195,7 +195,7 @@ To quickly test this we can open the executable in x32dbg and quickly test it.
 
 ## Advanced Dynamic Analysis
 
-After rebasing the executable in Ida in order to set the breakpoint in the debugger, running the program, inputting the directions up x2, down x2, right x2 and  left x2 and entering the string ***'hello'*** as question we hit the breakpoint.
+After rebasing the executable in Ida in order to set the breakpoint in the debugger, running the program, inputting the directions up x2, down x2, right x2 and  left x2 and entering the string **'hello'** as question we hit the breakpoint.
 
 ![deb_dir](images/deb_dir.png)
 
