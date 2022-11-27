@@ -33,9 +33,9 @@ Play it live at: http://flare-on.com/flaredle/
 </code></pre><h2 id=challenge-overview>Challenge Overview</h2><p>Upon loading the website we are presented with some sort of Wordle game.
 <img src=images/main.png alt=main></p><h2 id=dynamic-analysis>Dynamic Analysis</h2><p>When testing the app it seems that it only accepts words with a minimum length.
 <img src=images/not_enough.png alt=not_enough></p><p>After some testing we can see that the length required is 21 characters, upon reaching the length the error message becomes &ldquo;Word not in list!&rdquo;
-<img src=images/no_list.png alt=no_list></p><p>So we know that it checks a list of valid 21 character words.</p><h2 id=static-analysis>Static Analysis</h2><h3 id=wordsjs>words.js</h3><p>Opening the Firefox devtools (Chrome&rsquo;s work too) and checking the Debugger tab we see that 2 javascript files are being loaded, script.js and words.js</p><p>words.js contains a list of valid words.
+<img src=images/no_list.png alt=no_list></p><p>So we know that it checks a list of valid 21 character words.</p><h2 id=static-analysis>Static Analysis</h2><h3 id=wordsjs>words.js</h3><p>Opening the Firefox devtools (Chrome&rsquo;s work too) and checking the Debugger tab we see that 2 javascript files are being loaded, <strong>script.js</strong> and <strong>words.js</strong></p><p><strong>words.js</strong> contains a list of valid words.
 <img src=images/word_list.png alt=word_list></p><p>When trying a random word from the list the app now marks which letters are correct, which ones are present and which ones are not present in the correct answer.
-<img src=images/word_on_list.png alt=word_on_list></p><p>Armed with that knowledge we can deduce that somewhere in the source code there&rsquo;s a comparison being made between our input word and the correct word.</p><h3 id=scriptjs>script.js</h3><p>Examining script.js we find this interesting conditional statement in the code.</p><pre><code class=language-javascript>...(SNIP)...
+<img src=images/word_on_list.png alt=word_on_list></p><p>Armed with that knowledge we can deduce that somewhere in the source code there&rsquo;s a comparison being made between our input word and the correct word.</p><h3 id=scriptjs>script.js</h3><p>Examining <strong>script.js</strong> we find this interesting conditional statement in the code.</p><pre><code class=language-javascript>...(SNIP)...
 
 if (pressedKey === 'Enter') {
     checkGuess()
@@ -43,7 +43,7 @@ if (pressedKey === 'Enter') {
   }
 
 ...(SNIP)...
-</code></pre><p>Examining the function &ldquo;checkGuess&rdquo; we see that theres indeed a comparison being made between the variables &ldquo;guessString&rdquo; and &ldquo;rightGuessString&rdquo;</p><pre><code class=language-javascript>...(SNIP)...
+</code></pre><p>Examining the function &ldquo;<strong>checkGuess</strong>&rdquo; we see that theres indeed a comparison being made between the variables &ldquo;<strong>guessString</strong>&rdquo; and &ldquo;<strong>rightGuessString</strong>&rdquo;</p><pre><code class=language-javascript>...(SNIP)...
 
 if (guessString === rightGuessString) {
     let flag = rightGuessString + '@flare-on.com';
@@ -56,7 +56,7 @@ if (guessString === rightGuessString) {
     return
 
 ...(SNIP)...
-</code></pre><h2 id=advanced-dynamic-analysis>Advanced Dynamic Analysis</h2><p>To quickly solve this challenge we can just set a breakpoint in the comparison, input a random word from the list and examine the contents of the variable &ldquo;rightGuessString&rdquo; at runtime.
+</code></pre><h2 id=advanced-dynamic-analysis>Advanced Dynamic Analysis</h2><p>To quickly solve this challenge we can just set a breakpoint in the comparison, input a random word from the list and examine the contents of the variable &ldquo;<strong>rightGuessString</strong>&rdquo; at runtime.
 <img src=images/breakpoint.png alt=breakpoint></p><p>Now that we know which word is the right answer we could run again the game and use the word to get the flag or we can be lazy and just use the console to change the value of the &ldquo;guessString&rdquo; variable as shown below.
 <img src=images/answer.png alt=answer></p><p>Now we can resume the execution and the check will pass giving us the flag!
 <img src=images/flag.png alt=flag></p></article><div class=my-4><a href=https://alpharivs.github.io/tags/reversing/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#reversing</a>
