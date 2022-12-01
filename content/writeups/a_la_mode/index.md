@@ -6,7 +6,9 @@ authors: Alpharivs
 tags:
   - reversing
   - static
-  - dynamic
+  - C#
+  - .Net
+  - Mixed-mode
   - challenge
   - ctf
   - flare-on
@@ -242,7 +244,7 @@ Encrypted Data 1: 'MyV0ic3!'
 
 #### Create Console App
 
-Now we can create a ***.Net C# Console Application*** using ***Visual Studio***.
+Now we can create a **.Net C# Console Application** using **Visual Studio**.
 ```cs
 using System;
 using FlareOn;
@@ -304,7 +306,7 @@ print('Encrypted Data 2: {}'.format(cipher.decrypt(encrypted_data2).decode()))
 We can also get the flag in this way.
 
 ```bash
-Encrypted Data 1: MyV0ic3!
-Encrypted Data 2: M1x3d_M0dE_4_l1f3@flare-on.com
+Encrypted Data 1: 'MyV0ic3!'
+Encrypted Data 2: 'M1x3d_M0dE_4_l1f3@flare-on.com'
 ```
 Lux-Sit

@@ -7,6 +7,7 @@ tags:
   - reversing
   - static
   - dynamic
+  - C++
   - challenge
   - ctf
   - flare-on
