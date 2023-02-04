@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SDL on Lux-Sit</title>
+    <link>https://alpharivs.github.io/tags/sdl/</link>
+    <description>Recent content in SDL on Lux-Sit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2022 &lt;a href=&#34;https://twitter.com/alpharivs&#34;&gt;Alpharivs&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Sat, 19 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://alpharivs.github.io/tags/sdl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flare-On 2022 - Magic 8 Ball</title>
+      <link>https://alpharivs.github.io/writeups/magic_8_ball/</link>
+      <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://alpharivs.github.io/writeups/magic_8_ball/</guid>
+      <description>Challenge Description You got a question? Ask the 8 ball!Basic Static Analysis +------------------------+------------------------------------------------------------------------------------+| md5 | 3c2d4ea7b946596096bf039d0043a07b || sha1 | ae41beb01a7caa07a5b6e847a7c04016539cba64 || sha256 | 2fcead898d8f900715c9201f246d040eb9686b8f732e683518e8ef92d26dfa89 || os | windows || format | pe || arch | i386 || path | Magic8Ball.exe |+------------------------+------------------------------------------------------------------------------------+We are given a Windows x32 exe and a bunch of DLLs and an assets directory.
+remnux@remnux:~/flare/magic8$ file *Magic8Ball.exe: PE32 executable (GUI) Intel 80386, for MS Windowslibjpeg-9.</description>
+    </item>
+    
+  </channel>
+</rss>

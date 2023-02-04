@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Flare-On 2022 - anode | Lux-Sit</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://alpharivs.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://alpharivs.github.io/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/bash.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/cpp.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/c.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/vbscript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/powershell.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/http.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/x86asm.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/javascript.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/ruby.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js"
+     crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/shell.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://alpharivs.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="https://alpharivs.github.io/js/fontawesome.min.d1a1d765b1b3c0c86dd45b8e5934d8febe529d6e1a221a6ce32dcc44678b12e72f47c6b3619acaf779d3d6327a38f29d.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://alpharivs.github.io/images/icon_hu4bae09c78eba04c5e7d71d1040233379_73006_32x32_fill_q75_box_center.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://alpharivs.github.io/images/icon_hu4bae09c78eba04c5e7d71d1040233379_73006_180x180_fill_q75_box_center.jpg">
+
+<meta name="description"
+  content="Write-up for anode Flare-on 2022 challenge">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://alpharivs.github.io/writeups/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Flare-On 2022 - anode",
+      "item":"https://alpharivs.github.io/writeups/anode/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://alpharivs.github.io/writeups/anode/"
+    },
+    "headline": "Flare-On 2022 - anode | Lux-Sit",
+    "image": "https://alpharivs.github.io/images/writeups/flare.png",
+    "datePublished": "2022-11-29T00:00:00+00:00",
+    "dateModified": "2022-11-29T00:00:00+00:00",
+    "wordCount":  1720 ,
+    "author": {
+        "@type": "Person",
+        "name": "Alpharivs"
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "WANG Chucheng",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://alpharivs.github.io/images/icon.jpg"
+        }
+        },
+    "description": "Write-up for anode Flare-on 2022 challenge"
+}
+</script><meta property="og:title" content="Flare-On 2022 - anode | Lux-Sit" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://alpharivs.github.io/images/icon.jpg">
+
+
+<meta property="og:url" content="https://alpharivs.github.io/writeups/anode/" />
+
+
+
+<meta property="og:description" content="Write-up for anode Flare-on 2022 challenge" />
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Lux-Sit" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-11-29T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2022-11-29T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="writeups" />
+
+
+<meta property="article:tag" content="reversing" />
+
+<meta property="article:tag" content="static" />
+
+<meta property="article:tag" content="javascript" />
+
+<meta property="article:tag" content="node" />
+
+<meta property="article:tag" content="challenge" />
+
+<meta property="article:tag" content="ctf" />
+
+
+
+
+
+<meta property="og:see_also" content="https://alpharivs.github.io/writeups/flare_flaredle/" />
+
+<meta property="og:see_also" content="https://alpharivs.github.io/writeups/a_la_mode/" />
+
+<meta property="og:see_also" content="https://alpharivs.github.io/writeups/challenge_teight/" />
+
+<meta property="og:see_also" content="https://alpharivs.github.io/writeups/darn_mice/" />
+
+<meta property="og:see_also" content="https://alpharivs.github.io/writeups/magic_8_ball/" />
+
+<meta property="og:see_also" content="https://alpharivs.github.io/writeups/flare_pixelpoker/" />
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">Lux-Sit</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/malware/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Malware Analysis</a>
+            <a href="/writeups/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">CTF Write-ups</a>
+            <a href="/htb_writeups/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">HacktheBox Write-ups</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">Flare-On 2022 - anode</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2022-11-29</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>9 min read</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://alpharivs.github.io/categories/write-ups/" class="hover:text-eureka"
+          >write-ups</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+    <img src="https://alpharivs.github.io/images/writeups/flare.png" class="w-full" alt="Featured Image">
+  
+
+  <h2 id="challenge-description">Challenge Description</h2>
+<pre><code class="language-text">You’ve made it so far! I can’t believe it! And so many people are ahead of you!
+</code></pre>
+<h2 id="basic-static-analysis">Basic Static Analysis</h2>
+<p>We are given a Windows 64-bit executable.</p>
+<pre><code class="language-bash">&gt; file *
+anode.exe: PE32+ executable (console) x86-64, for MS Windows
+</code></pre>
+<p>If we check the file description we can see that we are dealing with a <a href="https://www.youtube.com/watch?v=aXOChLn5ZdQ">javascript</a> file.</p>
+<pre><code class="language-bash">description,Node.js: Server-side JavaScript
+</code></pre>
+<p>It&rsquo;s a huge executable.</p>
+<pre><code class="language-bash">&gt; ls -lsh anode.exe 
+55M -rw-rw-r-- 1 remnux remnux 55M Sep 26 08:08 anode.exe
+</code></pre>
+<h3 id="strings">Strings</h3>
+<p>When checking for strings it stood out that what seems to be the script code is clearly in a readable format as shown in the extract below.</p>
+<pre><code class="language-js">...(SNIP)...
+
+    break;
+  var target = [106, 196, 106, 178, 174, 102, 31, 91, 66, 255, 86, 196, 74, 139, 219, 166, 106, 4, 211, 68, 227, 72, 156, 38, 239, 153, 223, 225, 73, 171, 51, 4, 234, 50, 207, 82, 18, 111, 180, 212, 81, 189, 73&gt;
+  if (b.every((x,i) =&gt; x === target[i])) {
+    console.log('Congrats!');
+  } else {
+    console.log('Try again.');
+
+...(SNIP)...
+</code></pre>
+<p>We also can see a very interesting footer.</p>
+<pre><code class="language-text">&lt;nexe~~sentinel&gt;
+</code></pre>
+<h2 id="dynamic-analysis">Dynamic Analysis</h2>
+<p>When executing it gives us a prompt asking for a flag.</p>
+<pre><code class="language-cmd">Enter flag: give_flag_plos!
+Try again.
+</code></pre>
+<p>After testing different inputs it always prints the same message.</p>
+<h2 id="advanced-static-analysis">Advanced Static Analysis</h2>
+<p>Based on the information that we have we should now move to try to see what&rsquo;s going on under the hood.</p>
+<h3 id="unpacking">Unpacking</h3>
+<p>Upon some googling on what&rsquo;s &ldquo;<strong>nexe</strong>&rdquo; we find it&rsquo;s <a href="https://github.com/nexe/nexe">github repository</a> and the description states:</p>
+<pre><code class="language-bash">Nexe is a command-line utility that compiles your Node.js application into a single executable file.
+</code></pre>
+<p>It seems that <strong>nexe</strong> embeds the code in the built binary and it&rsquo;s possible to extract it even with a hex editor as we guessed when looking at the strings output, but before getting out hands dirty manually unpacking a quick google search shows that there is already an <a href="https://www.npmjs.com/package/nexe_unpacker">unpacker</a> for nexe.</p>
+<p>After following the instructions we now have the unpacked javascript code.</p>
+<pre><code class="language-bash">&gt; cat anode.exe | nexe_unpacker --stdin --out extracted
+&gt; ls
+anode.exe  extracted
+&gt; cd extracted/
+&gt; ls
+anode.js
+&gt; cat anode.js 
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+...(SNIP)...
+</code></pre>
+<h3 id="code-analysis">Code Analysis</h3>
+<p>The code first checks if the input is <strong>44 characters long</strong> if not it just prints what we saw when testing, if the input is 44 characters long it will then convert each character into &ldquo;an integer between 0 and 65535 representing the UTF-16 code unit at the given index.&rdquo;</p>
+<pre><code class="language-javascript">const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+readline.question(`Enter flag: `, flag =&gt; {
+  readline.close();
+  if (flag.length !== 44) {
+    console.log(&quot;Try again.&quot;);
+    process.exit(0);
+  }
+  var b = [];
+  for (var i = 0; i &lt; flag.length; i++) {
+    b.push(flag.charCodeAt(i));
+  }
+</code></pre>
+<p>Thn there  seems to be something strange happening here according to the comment that was already present in the code we will test what&rsquo;s strange when performing the dynamic analysis but even now we can tell it&rsquo;s strange because the condition should always be true and thus the flow of the program should always stop here.</p>
+<pre><code class="language-js">  // something strange is happening...
+  if (1n) {
+    console.log(&quot;uh-oh, math is too correct...&quot;);
+    process.exit(0);
+  }
+</code></pre>
+<p>Then theres what seems to be a <a href="https://barrgroup.com/embedded-systems/how-to/coding-state-machines">state machine</a>.</p>
+<p>There are <strong>1025 cases</strong> in the switch + the default case</p>
+<pre><code class="language-bash">grep -o  -i &quot;case&quot; extracted.js | wc -l
+1025
+</code></pre>
+<p>The if statements in every switch case seem to branch out depending on a <strong>random value</strong> or a <strong>bigint</strong> number as shown below in two example cases and in each case the functionality seems to be changing the value of a byte of the input.</p>
+<pre><code class="language-js">  var state = 1337;
+  while (true) {
+    state ^= Math.floor(Math.random() * (2**30));
+    switch (state) {
+      case 306211:
+        if (Math.random() &lt; 0.5) {
+          b[30] -= b[34] + b[23] + b[5] + b[37] + b[33] + b[12] + Math.floor(Math.random() * 256);
+          b[30] &amp;= 0xFF;
+        } else {
+          b[26] -= b[24] + b[41] + b[13] + b[43] + b[6] + b[30] + 225;
+          b[26] &amp;= 0xFF;
+        }
+        state = 868071080;
+        continue;
+
+...(SNIP)...
+
+        continue;
+      case 755154:
+        if (93909087n) {
+          b[4] -= b[42] + b[6] + b[26] + b[39] + b[35] + b[16] + 80;
+          b[4] &amp;= 0xFF;
+        } else {
+          b[16] += b[36] + b[2] + b[29] + b[10] + b[12] + b[18] + 202;
+          b[16] &amp;= 0xFF;
+        }
+        state = 857247560;
+        continue;
+
+...(SNIP)...
+</code></pre>
+<p>The last part of the code seems to check the final result of the permutations made in the state machine against an array and printing a message according to the comparison&rsquo;s result.</p>
+<pre><code class="language-js">  var target = [106, 196, 106, 178, 174, 102, 31, 91, 66, 255, 86, 196, 74, 139, 219, 166, 106, 4, 211, 68, 227, 72, 156, 38, 239, 153, 223, 225, 73, 171, 51, 4, 234, 50, 207, 82, 18, 111, 180, 212, 81, 189, 73, 76];
+  if (b.every((x,i) =&gt; x === target[i])) {
+    console.log('Congrats!');
+  } else {
+    console.log('Try again.');
+  }
+});
+</code></pre>
+<h2 id="advanced-dynamic-analysis">Advanced Dynamic Analysis</h2>
+<p>When testing both executables with the expected length of input (<strong>44</strong>) there is a difference in behavior between the original executable and out unpacked version.</p>
+<pre><code class="language-bash"># Original executable
+&gt; anode.exe
+Enter flag: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Try again.
+
+# Unpacked version.
+&gt; node extracted.js
+Enter flag: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+uh-oh, math is too correct...
+</code></pre>
+<p>The behavior of the unpacked <strong>extracted.js</strong> should be the correct one because of the check that&rsquo;s being made in the code:</p>
+<pre><code class="language-js">// something strange is happening...
+  if (1n) {
+    console.log(&quot;uh-oh, math is too correct...&quot;);
+    process.exit(0);
+  }
+</code></pre>
+<p><strong>1n</strong> should <strong>always be true</strong> as the value is <strong>1</strong> (1 == true) but the check in the original executable is yielding <strong>false</strong> that leads us to believe that there&rsquo;s some type of tampering taking place.</p>
+<p>If we patch that line in <strong>extracted.js</strong> we get the following behavior:</p>
+<pre><code class="language-bash">&gt; node extracted_patched.js 
+Enter flag: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+uh-oh, math.random() is too random...
+</code></pre>
+<p>The message now complains that math.random() is &hellip; too &hellip; random&hellip; that also tells us that <strong>Math.random()</strong> is algo tampered in the compiled version, that makes sense as the flag is always the same so the states can&rsquo;t be random.</p>
+<p>We can conclude that there&rsquo;s some <strong>tampering</strong> occurring with <strong>Math.random()</strong> and <strong>bigint</strong> in the original executable.</p>
+<h3 id="patching">Patching</h3>
+<p>Before reversing the whole node package to see what&rsquo;s being tampered we will test if the executable can be patched to give us the information that we want without that hassle.
+<img src="images/patch_message.png" alt="patch_message"></p>
+<p>It works.</p>
+<pre><code class="language-bash">&gt; &quot;anode - Copy.exe&quot;
+Enter flag: hello
+LOL NOPE..
+</code></pre>
+<p>Now we will extract the states that are being used to select the switch cases, it&rsquo;s important to keep the same length in the executable by removing the same amount of bytes that you add if not it will crash.
+<img src="images/patch_test.png" alt="patch_test"></p>
+<p>After running multiple times we can conclude that <strong>Math.random()</strong> indeed produces the same results every time.</p>
+<p><img src="images/states.png" alt="states"></p>
+<p>Now we need to see how it branches out to understand how the bytes of the input are being processed.</p>
+<p><img src="images/patch_branches.png" alt="patch_branches"></p>
+<p>Notice how it&rsquo;s also <a href="https://oscarliang.com/what-s-the-use-of-and-0xff-in-programming-c-plus-p/">masking</a> every byte so that it remains a value of 8 bits.</p>
+<pre><code class="language-js">b[30] &amp;= 0xFF;
+</code></pre>
+<p>After testing it correctly displays the operations that it makes in a case branch.</p>
+<pre><code class="language-bash">&gt; echo AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | &quot;anode - Copy.exe&quot;
+Enter flag: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+b[30] -= b[34] + b[23] + b[5] + b[37] + b[33] + b[12] + 60
+Try again.
+</code></pre>
+<h2 id="extracting-all-operations">Extracting all Operations</h2>
+<p>Now we must do the same for all <strong>1025</strong> cases for that we will need to make a lot of space , a great strategy for that is getting rid of the leading spaces as shown in the picture (all the light blue are bytes that we can free)</p>
+<p><img src="images/trailing.png" alt="trailing"></p>
+<p>With that in mind we can wrap the branches with <strong>console.log()</strong> and extract the operations performed and after applying the changes let&rsquo;s test it and dump the output into a text file.</p>
+<pre><code class="language-bash">&gt; echo AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA | &quot;operations.exe&quot; &gt; operations.txt
+</code></pre>
+<p>We have extracted all the operations that the executable performs through the state machine.</p>
+<pre><code class="language-text">b[29] -= b[37] + b[23] + b[22] + b[24] + b[26] + b[10] + 7
+b[29] &amp;= 0xFF
+b[39] += b[34] + b[2] + b[1] + b[43] + b[20] + b[9] + 79
+b[39] &amp;= 0xFF
+b[19] ^= (b[26] + b[0] + b[40] + b[37] + b[23] + b[32] + 255) &amp; 0xFF
+b[28] ^= (b[1] + b[23] + b[37] + b[31] + b[43] + b[42] + 245) &amp; 0xFF
+b[39] += b[42] + b[10] + b[3] + b[41] + b[14] + b[26] + 177
+b[39] &amp;= 0xFF
+b[9] -= b[20] + b[19] + b[22] + b[5] + b[32] + b[35] + 151
+b[9] &amp;= 0xFF
+</code></pre>
+<h2 id="reversing-the-operations">Reversing the operations</h2>
+<p>Now that we have extracted the operations we need to <strong>reverse the order</strong>, that means starting from bottom to top.</p>
+<pre><code class="language-bash"># Reverse the order of the file using bash.
+❯ tac operations.txt &gt; reversed_ops.txt
+</code></pre>
+<p>Now we open the files in <strong>nvim</strong> and perform the following operations to move all the lone maskings on line down.</p>
+<pre><code class="language-bash"># Move the one line maskings down a line.
+:g/.*&amp;=.*/norm ddjp
+
+b[39] += b[18] + b[16] + b[8] + b[19] + b[5] + b[23] + 36
+b[39] &amp;= 0xFF
+
+# Append ; at the end of each line.
+g/$/norm A;
+</code></pre>
+<p>Last step is inverting the signs of the operations (<strong>+= becomes -=</strong>) and the end result should look like bellow.</p>
+<pre><code class="language-js">b[39] -= b[18] + b[16] + b[8] + b[19] + b[5] + b[23] + 36;
+b[39] &amp;= 0xFF;
+b[22] -= b[16] + b[18] + b[7] + b[23] + b[1] + b[27] + 50;
+b[22] &amp;= 0xFF;
+b[34] -= b[35] + b[40] + b[13] + b[41] + b[23] + b[25] + 14;
+b[34] &amp;= 0xFF;
+</code></pre>
+<h2 id="flag">Flag</h2>
+<p>We will use javascript to reverse everything including the transformation to unicode that the program did using.</p>
+<pre><code class="language-js">// Convert input into Unicode
+var b = [];
+  for (var i = 0; i &lt; flag.length; i++) {
+    b.push(flag.charCodeAt(i));
+  }
+</code></pre>
+<p>That results in the following script.</p>
+<pre><code class="language-js">// Flag Unicode
+let b = [106, 196, 106, 178, 174, 102, 31, 91, 66, 255, 86, 196, 74, 139, 219, 166, 106, 4, 211, 68, 227, 72, 156, 38, 239, 153, 223, 225, 73, 171, 51, 4, 234, 50, 207, 82, 18, 111, 180, 212, 81, 189, 73, 76];
+
+// Reversed Operations
+b[39] -= b[18] + b[16] + b[8] + b[19] + b[5] + b[23] + 36;
+b[39] &amp;= 0xFF;
+...(SNIP)...
+
+// Convert flag from Unicode.
+let result = &quot;&quot;;
+for (let i = 0; i &lt; b.length; i++) {
+    result += String.fromCharCode(b[i])
+}
+
+console.log(result);
+</code></pre>
+<p>And it worked!:</p>
+<pre><code class="language-bash">&gt; node solve.js 
+n0t_ju5t_A_j4vaSCriP7_ch4l1eng3@flare-on.com
+</code></pre>
+<p>Lux-Sit</p>
+
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="https://alpharivs.github.io/tags/reversing/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#reversing</a>
+    
+    <a href="https://alpharivs.github.io/tags/static/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#static</a>
+    
+    <a href="https://alpharivs.github.io/tags/javascript/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#javascript</a>
+    
+    <a href="https://alpharivs.github.io/tags/node/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#node</a>
+    
+    <a href="https://alpharivs.github.io/tags/challenge/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#challenge</a>
+    
+    <a href="https://alpharivs.github.io/tags/ctf/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#ctf</a>
+    
+    <a href="https://alpharivs.github.io/tags/flare-on/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#flare-on</a>
+    
+    <a href="https://alpharivs.github.io/tags/patching/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#patching</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+        <div class="py-2">
+  
+    <div class="my-8 flex flex-col items-center md:flex-row">
+      <a href="https://alpharivs.github.io/authors/alpharivs/" class="md:me-4 text-primary-text h-24 w-24">
+        
+        
+          <img
+            src="https://alpharivs.github.io/images/profile.jpg"
+            class="bg-primary-bg w-full rounded-full"
+            alt="Avatar"
+          />
+        
+      </a>
+      <div class="mt-4 w-full md:mt-0 md:w-auto">
+        <a
+          href="https://alpharivs.github.io/authors/alpharivs/"
+          class="mb-2 block border-b pb-1 text-lg font-bold"
+        >
+          <h3>Alpharivs</h3>
+        </a>
+        <span class="block pb-2">Eternal Cybersecurity student with love for Malware and CTFs</span>
+        
+          
+          
+          
+          
+          <a href="mailto:caliburn@tutanota.de" class="me-2">
+            <i class="fas fa-envelope"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="https://twitter.com/alpharivs" class="me-2">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="https://github.com/Alpharivs" class="me-2">
+            <i class="fab fa-github"></i>
+          </a>
+        
+          
+          
+          
+          
+          <a href="https://app.hackthebox.com/users/525385" class="me-2">
+            <i class="fab fa-jedi-order"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+</div>
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">Next</span>
+        <a href="https://alpharivs.github.io/writeups/a_la_mode/" class="block">Flare-On 2022 - à la mode</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>On This Page</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#challenge-description">Challenge Description</a></li>
+    <li><a href="#basic-static-analysis">Basic Static Analysis</a>
+      <ul>
+        <li><a href="#strings">Strings</a></li>
+      </ul>
+    </li>
+    <li><a href="#dynamic-analysis">Dynamic Analysis</a></li>
+    <li><a href="#advanced-static-analysis">Advanced Static Analysis</a>
+      <ul>
+        <li><a href="#unpacking">Unpacking</a></li>
+        <li><a href="#code-analysis">Code Analysis</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-dynamic-analysis">Advanced Dynamic Analysis</a>
+      <ul>
+        <li><a href="#patching">Patching</a></li>
+      </ul>
+    </li>
+    <li><a href="#extracting-all-operations">Extracting all Operations</a></li>
+    <li><a href="#reversing-the-operations">Reversing the operations</a></li>
+    <li><a href="#flag">Flag</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>See Also</h3>
+        
+          <a href="https://alpharivs.github.io/writeups/flare_flaredle/" class="no-underline">Flare-On 2022 - Flaredle</a>
+          <br />
+        
+          <a href="https://alpharivs.github.io/writeups/a_la_mode/" class="no-underline">Flare-On 2022 - à la mode</a>
+          <br />
+        
+          <a href="https://alpharivs.github.io/writeups/challenge_teight/" class="no-underline">Flare-On 2022 - T8</a>
+          <br />
+        
+          <a href="https://alpharivs.github.io/writeups/darn_mice/" class="no-underline">Flare-On 2022 - darn_mice</a>
+          <br />
+        
+          <a href="https://alpharivs.github.io/writeups/magic_8_ball/" class="no-underline">Flare-On 2022 - Magic 8 Ball</a>
+          <br />
+        
+          <a href="https://alpharivs.github.io/writeups/flare_pixelpoker/" class="no-underline">Flare-On 2022 - Pixel Poker</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2022 <a href="https://twitter.com/alpharivs">Alpharivs</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
+</html>
